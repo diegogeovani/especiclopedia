@@ -1,5 +1,5 @@
 from sqlalchemy import (Column, Integer,)
-from sqlalchemy.ext.declarative_base
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import (
         scoped_session,
         sessionmaker,
@@ -13,4 +13,5 @@ Base = declarative_base()
 
 class DatabaseVersion(Base):
     __tablename__ = 'SingleplayerDatabaseVersion'
-    number = Column(Integer, default=1, nullable=False, unique=True)
+    number = Column(Integer, default=1, nullable=False, primary_key=True,
+            unique=True)
